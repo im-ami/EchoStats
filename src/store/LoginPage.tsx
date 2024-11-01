@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAuthStore } from './authStore'; // Adjust path if needed
+import { useAuthStore } from './authStore'
 
 const Login = () => {
   const setToken = useAuthStore((state) => state.setToken);
