@@ -5,7 +5,8 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 
 function App() {
-  const { token, setToken } = useAuthStore();
+  const token = useAuthStore((state) => state.token);
+  const setToken = useAuthStore((state) => state.setToken);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -18,7 +19,7 @@ function App() {
 
       if (token) {
         setToken(token);
-        window.location.hash = '';
+        window.location.hash = ''; // Clear the URL
       }
     }
   }, [setToken]);
